@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-5">
-    <h2 class="mb-4 text-center">Inventory Management</h2>
+    <h2 class="mb-4 text-center">My Inventory</h2>
 
     <!-- Add Item Button -->
     <div class="d-flex justify-content-between mb-3">
@@ -19,7 +19,6 @@
                     <th>ID</th>
                     <th>Category ID</th>
                     <th>Item Name</th>
-                    <th>Quantity</th>
                     <th>Price</th>
                     <th>Actions</th>
                 </tr>
@@ -29,8 +28,7 @@
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->category_id }}</td>
-                    <td>{{ $item->item_name }}</td>
-                    <td>{{ $item->quantity }}</td>
+                    <td>{{ $item->name }}</td>
                     <td>${{ number_format($item->price, 2) }}</td>
                     <td>
                         <button class="btn btn-warning btn-sm">
