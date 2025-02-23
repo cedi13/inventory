@@ -14,3 +14,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/index', function () {
     return redirect('/items');
 });
+
+Route::get('/items/create', [ItemController::class, 'create'])->name('items.create');
+Route::post('/items', [ItemController::class, 'store'])->name('items.store');

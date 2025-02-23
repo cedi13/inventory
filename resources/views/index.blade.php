@@ -6,7 +6,7 @@
 
     <!-- Add Item Button -->
     <div class="d-flex justify-content-between mb-3">
-        <button class="btn btn-success" onclick="addItem()">
+        <button class="btn btn-success" onclick="window.location.href='{{ route('items.create') }}'">
             <i class="fas fa-plus"></i> Add Item
         </button>
     </div>
@@ -44,31 +44,14 @@
         </table>
     </div>
 </div>
-
-<!-- JavaScript for Actions -->
 <script>
-    function addItem() {
-        let table = document.getElementById("inventoryTable").getElementsByTagName('tbody')[0];
-        let row = table.insertRow();
-        let id = table.rows.length + 1;
-        row.innerHTML = `<td>${id}</td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td>
-                            <button class="btn btn-danger btn-sm" onclick="deleteItem(this)">
-                                <i class="fas fa-trash"></i> Delete
-                            </button>
-                        </td>`;
-    }
-
-    function deleteItem(button) {
+function deleteItem(button) {
         let row = button.parentElement.parentElement;
         row.remove();
     }
-</script>
+    </script>
 
 <!-- Add FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 @endsection
+
